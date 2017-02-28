@@ -17,7 +17,7 @@ public class MediaController {
 	private MediaService mediaService;
 
 	@RequestMapping(value = "/api/media/{id}")
-	public Media mediaByBusiness(@PathVariable("id") long id) {
+	public Media mediaByBusiness(@PathVariable("id") long id) {				
 		return mediaService.findOne(id);
 	}
 	

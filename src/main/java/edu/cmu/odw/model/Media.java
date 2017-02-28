@@ -1,7 +1,8 @@
 package edu.cmu.odw.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class Media {
 	private Long id;
 	private Long businessId;
 	private String featureImage;
-	private List<String> images;
+	private String images;
 	
 	public Media() {
 	}
@@ -35,12 +36,13 @@ public class Media {
 		this.featureImage = featureImage;
 	}
 
-	public List<String> getImages() {
-		return images;
+	public List<String> getImages() {		
+		List<String> result = Arrays.asList(images.split(",*,"));		
+		return result;
 	}
 
 	public void setImages(List<String> images) {
-		this.images = images;
+		this.images = String.join(",*,", images);
 	}
 
 	@Override
@@ -49,11 +51,11 @@ public class Media {
 				+ images + "]";
 	}
 
-	public Media(Long businessId, String featureImage, List<String> images) {
+	public Media(Long businessId, String featureImage, ArrayList<String> images) {
 		super();	
 		this.businessId = businessId;
 		this.featureImage = featureImage;
-		this.images = images;
+		this.images = String.join(",*,", images);
 	}
 
 	
