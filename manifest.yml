@@ -1,0 +1,5 @@
+---
+applications:
+- name: MediaService
+  path: ./build/libs/mediaService-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
