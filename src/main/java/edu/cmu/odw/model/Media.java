@@ -37,12 +37,12 @@ public class Media {
 	}
 
 	public List<String> getImages() {		
-		List<String> result = Arrays.asList(images.split(",*,"));		
+		List<String> result = Arrays.asList(images.split(","));		
 		return result;
 	}
 
 	public void setImages(List<String> images) {
-		this.images = String.join(",*,", images);
+		this.images = String.join(",", images);
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class Media {
 		super();	
 		this.businessId = businessId;
 		this.featureImage = featureImage;
-		this.images = String.join(",*,", images);
+		this.images = String.join(",", images);
 	}
 
 	
